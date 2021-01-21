@@ -16,9 +16,9 @@ from config import owner_id, bot_token, radio_link, sudo_chat_id
 
 app = Client(
     ":memory:",
-    bot_token=bot_token,
+    bot_token="1542143453:AAEiNiGq2SgIIsFTNNtcPmPHFSBEwlOGFlM",
     api_id=6,
-    api_hash="eb06d4abfb49dc3eeb1aeb98ae0f581e",
+    api_hash="95ecb21d294c7f6ffdce81558d27999a",
 )
 
 
@@ -47,8 +47,8 @@ blacks = []
 @app.on_message(filters.command("repo") & ~filters.edited)
 async def repo(_, message: Message):
     await message.reply_text(
-        "[Github](https://github.com/thehamkercat/Telegram_vc_bot)"
-        + " | [Group](t.me/TheHamkerChat)", disable_web_page_preview=True)
+        "[Github](https://github.com/madboy482/VC_BOT)"
+        + " | [Group](https://telegram.me/MadBoy_VC_BOT)", disable_web_page_preview=True)
 
 @app.on_message(
     filters.command(["ping"]) & filters.chat(sudo_chat_id) & ~filters.edited
@@ -74,7 +74,7 @@ async def start(_, message: Message):
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
         return
     await message.reply_text(
-        "Hi I'm Telegram Voice Chat Bot. Join @TheHamkerChat For Support."
+        "Hi I'm VC BOT. Join @MadBoy_VC_BOT For Support."
     )
 
 
