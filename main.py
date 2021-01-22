@@ -21,6 +21,7 @@ app = Client(
     api_hash="95ecb21d294c7f6ffdce81558d27999a",
 )
 
+VC_IMG = "https://telegra.ph/file/615b74c461ea5daf800f4.png"
 
 # Get User Input
 def kwairi(message):
@@ -68,15 +69,88 @@ async def ping(_, message):
 
 
 @app.on_message(filters.command(["start"]) & ~filters.edited)
-async def start(_, message: Message):
-    global blacks
-    if message.from_user.id in blacks:
-        await message.reply_text("You're Blacklisted, So Stop Spamming.")
-        return
-    await message.reply_text(
-        "Hi I'm VC BOT. Join @MadBoy_VC_BOT For Support.\nDevloped by @Warning_MadBoy_is_Here and @Wanacoins.\n😼😼😼"
-    )
 
+PM_START_TEXT = """
+Hi {}, my name is {}! 
+I am a Superb Group Management Bot.
+You can find my list of available commands with /help.
+"""
+
+@run_async
+def start(update: Update, context: CallbackContext):
+    args = context.args
+    uptime = get_readable_time((time.time() - StartTime))
+    if update.effective_chat.type == "private":
+        if len(args) >= 1:
+            if args[0].lower() == "help":
+                send_help(update.effective_chat.id, HELP_STRINGS)
+            elif args[0].lower().startswith("ghelp_"):
+                mod = args[0].lower().split('_', 1)[1]
+                if not HELPABLE.get(mod, False):
+                    return
+                send_help(
+                    update.effective_chat.id, HELPABLE[mod].__help__,
+                    InlineKeyboardMarkup([[
+                        InlineKeyboardButton(
+                            text="Back", callback_data="help_back")
+                    ]]))
+            elif args[0].lower() == "markdownhelp":
+                IMPORTED["extras"].markdown_help_sender(update)
+            elif args[0].lower() == "disasters":
+                IMPORTED["disasters"].send_disasters(update)
+            elif args[0].lower().startswith("stngs_"):
+                match = re.match("stngs_(.*)", args[0].lower())
+                chat = dispatcher.bot.getChat(match.group(1))
+
+                if is_user_admin(chat, update.effective_user.id):
+                    send_settings(
+                        match.group(1), update.effective_user.id, False)
+                else:
+                    send_settings(
+                        match.group(1), update.effective_user.id, True)
+
+            elif args[0][1:].isdigit() and "rules" in IMPORTED:
+                IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
+
+        else:
+            first_name = update.effective_user.first_name
+            update.effective_message.reply_photo(
+                VC_IMG,
+                PM_START_TEXT.format(
+                    escape_markdown(first_name),
+                    escape_markdown(context.bot.first_name)),
+                parse_mode=ParseMode.MARKDOWN,
+                disable_web_page_preview=True,
+                reply_markup=InlineKeyboardMarkup(
+                    [[
+                        InlineKeyboardButton(
+                            text="😼Add VC to your group😼",
+                            url="t.me/{}?startgroup=true".format(
+                                context.bot.username))
+                    ],
+                     [
+                         InlineKeyboardButton(
+                             text="😼 Support Channel",
+                             url=f"https://telegram.me/MadBoy_VC_BOT"),
+                         InlineKeyboardButton(
+                             text="Support Chat 😼",
+                             url="https://telegram.me/MadBoy_VC_BOT_Grp")
+                     ],
+                     [
+                         InlineKeyboardButton(
+                             text="🧑‍💻Developer🧑‍💻",
+                             url="https://t.me/Warning_MadBoy_is_Here")
+                     ],
+                     [
+                         InlineKeyboardButton(
+                             text="🔗 Source code",
+                             url="https://github.com/madboy482/VC_BOT")
+                     ]]))
+    else:
+        update.effective_message.reply_text(
+            "Me iz Online😼😼\n<b>Haven't slept since:👀</b> <code>{}</code>"
+            .format(uptime),
+            parse_mode=ParseMode.HTML)
 
 # Help
 
