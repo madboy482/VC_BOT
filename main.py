@@ -21,7 +21,6 @@ app = Client(
     api_hash="95ecb21d294c7f6ffdce81558d27999a",
 )
 
-VC_IMG = "https://telegra.ph/file/615b74c461ea5daf800f4.png"
 
 # Get User Input
 def kwairi(message):
@@ -72,7 +71,6 @@ async def start(_, message: Message):
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
         return
     await message.reply_text(
-        VC_IMG
         "Hi I'm VC BOT. Join @MadBoy_VC_BOT For Support.\n\nDevloped by @Warning_MadBoy_is_Here and @Wanacoins.\n😼😼😼\n\n\n<b><i>Repo (https://github.com/madboy482/VC_BOT)</i></b>\n<b>⚠️⚠️We don't support Forks' help, So Fork at your own Risk!!⚠️⚠️</b>"
     )
 
