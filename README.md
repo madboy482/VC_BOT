@@ -69,6 +69,6 @@ Command | Description
 3. If you want any help you can ask <b><i>[MadBoy](https://t.me/Warning_MadBoy_is_Here)</i></b>
 
 ## Credits
-1. `https://github.com/cyberboysumanjay/JioSaavnAPI` [For JioSaavnAPI]
-2. `https://github.com/PranavJha21` [For Fixing Errors]
-3. `https://github.com/MadBoy482` [Bot Developer]
+1. <b><i>[Pranav Jha](https://telegram.me/Wanacoins)</i></b> or <b><i>[Pranav Jha](https://ghithub.com/PranavJha1)</i></b> `(Errors Fixer)`
+2. <b><i>[MadBoy](https://telegram.me/Warning_MadBoy_is_Here)</i></b> or <b><i>[MadBoy](https://github.com/MadBoy482)</i></b> `(Bot Developer)`
+3. `https://github.com/cyberboysumanjay/JioSaavnAPI` [For JioSaavnAPI]
