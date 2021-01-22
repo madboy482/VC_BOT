@@ -70,10 +70,9 @@ async def ping(_, message):
 
 @app.on_message(filters.command(["start"]) & ~filters.edited)
 
-PM_START_TEXT = """
-Hi {}, my name is {}! 
+PM_START_TEXT =
+Hi {}, my name is {}!!!
 I am a Superb Telegram VC BOT.
-"""
 
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
