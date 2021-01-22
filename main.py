@@ -69,8 +69,7 @@ async def ping(_, message):
 
 
 @app.on_message(filters.command(["start"]) & ~filters.edited)
-            first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
+                update.effective_message.reply_photo(
                 VC_IMG,
                 reply_markup=InlineKeyboardMarkup(
                     [[
