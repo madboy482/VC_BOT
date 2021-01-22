@@ -1,6 +1,6 @@
-# Telegram Voice-Chat Bot
+# Telegram VC Bot
 
-Telegram Voice-Chat Bot To Play Music From Various Sources In Your Group
+Telegram VC Bot To Play Music From Various Sources In Your Group 😼😼.
 
 <img src="https://telegra.ph/file/3bd364e554a8826af6d22.jpg" width="530" height="400">
 
