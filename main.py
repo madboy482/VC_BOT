@@ -72,8 +72,7 @@ async def ping(_, message):
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am a Superb Group Management Bot.
-You can find my list of available commands with /help.
+I am a Superb Telegram VC BOT.
 """
 
 @run_async
