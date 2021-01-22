@@ -65,6 +65,9 @@ async def ping(_, message):
 
 
 # Start
+
+
+@app.on_message(filters.command(["start"]) & ~filters.edited)
 async def start(_, message: Message):
     global blacks
     if message.from_user.id in blacks:
