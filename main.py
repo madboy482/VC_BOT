@@ -66,41 +66,15 @@ async def ping(_, message):
 
 
 # Start
-
-
-@app.on_message(filters.command(["start"]) & ~filters.edited)
-                update.effective_message.reply_photo(
-                VC_IMG,
-                reply_markup=InlineKeyboardMarkup(
-                    [[
-                        InlineKeyboardButton(
-                            text="😼Add VC to your group😼",
-                            url="t.me/{}?startgroup=true".format(
-                                context.bot.username))
-                    ],
-                     [
-                         InlineKeyboardButton(
-                             text="😼 Support Channel",
-                             url=f"https://telegram.me/MadBoy_VC_BOT"),
-                         InlineKeyboardButton(
-                             text="Support Chat 😼",
-                             url="https://telegram.me/MadBoy_VC_BOT_Grp")
-                     ],
-                     [
-                         InlineKeyboardButton(
-                             text="🧑‍💻Developer🧑‍💻",
-                             url="https://t.me/Warning_MadBoy_is_Here")
-                     ],
-                     [
-                         InlineKeyboardButton(
-                             text="🔗 Source code",
-                             url="https://github.com/madboy482/VC_BOT")
-                     ]]))
-    else:
-        update.effective_message.reply_text(
-            "Me iz Online😼😼\n<b>Haven't slept since:👀</b> <code>{}</code>"
-            .format(uptime),
-            parse_mode=ParseMode.HTML)
+async def start(_, message: Message):
+    global blacks
+    if message.from_user.id in blacks:
+        await message.reply_text("You're Blacklisted, So Stop Spamming.")
+        return
+    await message.reply_text(
+        VC_IMG
+        "Hi I'm VC BOT. Join @MadBoy_VC_BOT For Support.\n\nDevloped by @Warning_MadBoy_is_Here and @Wanacoins.\n😼😼😼\n\n\n<b><i>Repo (https://github.com/madboy482/VC_BOT)</i></b>\n<b>⚠️⚠️We don't support Forks' help, So Fork at your own Risk!!⚠️⚠️</b>"
+    )
 
 # Help
 
