@@ -66,7 +66,7 @@ Command | Description
 
 1. More services will be added soon.
 2. Termux is not completely supported yet, might take a week or two.
-3. If you want any help you can ask <b><i>[MadBoy](https://t.me/Warning_MadBoy_is_Here)</i></b>
+3. If you want any help you can ask <b><i>[MadBoy](https://t.me/Warning_MadBoy_is_Here)</i></b>.
 
 ## Credits
 1. <b><i>[MadBoy](https://telegram.me/Warning_MadBoy_is_Here)</i></b> or <b><i>[MadBoy](https://github.com/MadBoy482)</i></b> `(Bot Developer)`
