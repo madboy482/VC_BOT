@@ -74,7 +74,7 @@ async def start(_, message: Message):
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
         return
     await message.reply_text(
-        "Hi I'm VC BOT. Join @MadBoy_VC_BOT For Support.\n\nDevloped by @Warning_MadBoy_is_Here and @Wanacoins.\n😼😼😼\n\n\n<b><i>[Repo](https://github.com/madboy482/VC_BOT)</i></b>\n\n<b>⚠️⚠️We don't support Forks' help, So Fork at your own Risk!!⚠️⚠️</b>"
+        "Hi I'm VC BOT. Join @MadBoy_VC_BOT For Support.\n\nDevloped by @Warning_MadBoy_is_Here and @Wanacoins.\n😼😼😼\n\n\n<b><i>Click `Repo` to get the Repo of Bot :- [Repo](https://github.com/madboy482/VC_BOT)</i></b>\n\n<b>⚠️⚠️We don't support Forks' help, So Fork at your own Risk!!⚠️⚠️</b>"
     )
 
 # Help
