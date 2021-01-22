@@ -74,7 +74,7 @@ async def start(_, message: Message):
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
         return
     await message.reply_text(
-        "Hi I'm VC BOT. Join @MadBoy_VC_BOT For Support."
+        "Hi I'm VC BOT. Join @MadBoy_VC_BOT For Support.This bot is devloped by @Warning_MadBoy_is_Here and @Wanacoins"
     )
 
 
